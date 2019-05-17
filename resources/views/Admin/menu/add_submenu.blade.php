@@ -31,6 +31,17 @@
 						<form action="{{route('submenu.store')}}" method="post">
 
 							{{ csrf_field() }}
+
+							<div class="form-group">
+								<label>Choose Menu</label>
+								<select class="form-control" name = 'parent_menu_id'>
+								    @foreach($menus as $menu)
+								    	<option value="{{ $menu->id }}">
+								    		{{ $menu->title }}
+								    	</option>
+								    @endforeach										
+								</select>									
+							</div>		
 						
 							<div class="form-group">
 								<label>Title</label>
@@ -42,16 +53,6 @@
 								<input class="form-control" name="slug" placeholder="Slug">
 							</div>
 
-							<div class="form-group">
-								<label>Choose category</label>
-								<select class="form-control" name = 'parent_menu_id'>
-								    @foreach($menus as $menu)
-								    	<option value="{{ $menu->id }}">
-								    		{{ $menu->title }}
-								    	</option>
-								    @endforeach										
-								</select>									
-							</div>		
 																						
 							<div class="form-group">
 								<label>Status</label>

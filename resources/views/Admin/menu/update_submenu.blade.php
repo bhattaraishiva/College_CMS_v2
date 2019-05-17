@@ -35,19 +35,9 @@
 							{{ method_field('patch') }}
 
 							{{ csrf_field() }}
-						
-							<div class="form-group">
-								<label>Title</label>
-								<input class="form-control" name="title" value="{{ $submenu->title }}" placeholder="Title">
-							</div>	
 
 							<div class="form-group">
-								<label>Slug</label>
-								<input class="form-control" name="slug" value="{{ $submenu->slug }}"placeholder="Slug">
-							</div>
-
-							<div class="form-group">
-								<label>Choose category</label>
+								<label>Choose enu</label>
 								<select class="form-control" name = 'menu_id'>
 
 								    @foreach($menus as $menu)
@@ -59,6 +49,18 @@
 								    @endforeach										
 								</select>									
 							</div>		
+						
+							<div class="form-group">
+								<label>Title</label>
+								<input class="form-control" name="title" value="{{ $submenu->title }}" placeholder="Title">
+							</div>	
+
+							<div class="form-group">
+								<label>Slug</label>
+								<input class="form-control" name="slug" value="{{ $submenu->slug }}"placeholder="Slug">
+							</div>
+
+							
 																						
 							<div class="form-group">
 								<label>Status</label>
