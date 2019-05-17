@@ -149,3 +149,27 @@ Route::get('dashboard/1/profile','TeacherController@show_profile');
 Route::get('dashboard/1/add_profile','TeacherController@create');
 Route::post('teacher/add_profile','TeacherController@store');
 
+//Program
+
+Route::post('/program/store',[
+        'uses'=>'ProgramController@store',
+        'as'=>'program.store'
+    ]);
+Route::resource('programs','ProgramController');
+
+
+
+Route::get('/program/{id}/edit','ProgramController@edit');
+Route::get('/program/create','ProgramController@create');
+
+
+Route::get('/program/view','ProgramController@index');
+
+
+Route::get('/program/toogle/{id}','ProgramController@toogle_status');
+
+Route::patch('/program/update/{id}',[
+    'uses' => 'ProgramController@update',
+    'as'  => 'program.update'
+]);
+Route::get('/program/delete/{id}','ProgramController@destroy');
