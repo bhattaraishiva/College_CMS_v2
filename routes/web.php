@@ -173,3 +173,25 @@ Route::patch('/program/update/{id}',[
     'as'  => 'program.update'
 ]);
 Route::get('/program/delete/{id}','ProgramController@destroy');
+
+//Semester
+
+Route::get('/semester/toogle/{id}','SemesterController@toogle_status');
+//to create the semester
+Route::get('/semester/create','SemesterController@create');
+//to view the semester
+Route::get('/semester/view','SemesterController@index');
+//to store the semester
+Route::post('/semester/store',[
+        'uses'=>'SemesterController@store',
+        'as'=>'semester.store'
+    ]);
+
+Route::resource('semesters','SemesterController');
+
+Route::get('/semester/{id}/edit','SemesterController@edit');
+
+Route::patch('/semester/update/{id}',[
+    'uses' => 'SemesterController@update',
+    'as'  => 'semester.update'
+]);
