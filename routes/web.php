@@ -149,3 +149,70 @@ Route::get('dashboard/1/profile','TeacherController@show_profile');
 Route::get('dashboard/1/add_profile','TeacherController@create');
 Route::post('teacher/add_profile','TeacherController@store');
 
+//Program
+
+Route::post('/program/store',[
+        'uses'=>'ProgramController@store',
+        'as'=>'program.store'
+    ]);
+Route::resource('programs','ProgramController');
+
+
+
+Route::get('/program/{id}/edit','ProgramController@edit');
+Route::get('/program/create','ProgramController@create');
+
+
+Route::get('/program/view','ProgramController@index');
+
+
+Route::get('/program/toogle/{id}','ProgramController@toogle_status');
+
+Route::patch('/program/update/{id}',[
+    'uses' => 'ProgramController@update',
+    'as'  => 'program.update'
+]);
+Route::get('/program/delete/{id}','ProgramController@destroy');
+
+//Semester
+
+Route::get('/semester/toogle/{id}','SemesterController@toogle_status');
+//to create the semester
+Route::get('/semester/create','SemesterController@create');
+//to view the semester
+Route::get('/semester/view','SemesterController@index');
+//to store the semester
+Route::post('/semester/store',[
+        'uses'=>'SemesterController@store',
+        'as'=>'semester.store'
+    ]);
+
+Route::resource('semesters','SemesterController');
+
+Route::get('/semester/{id}/edit','SemesterController@edit');
+
+Route::patch('/semester/update/{id}',[
+    'uses' => 'SemesterController@update',
+    'as'  => 'semester.update'
+]);
+
+//Course
+//store
+Route::post('/course/store',[
+        'uses'=>'CourseController@store',
+        'as'=>'course.store'
+    ]);
+Route::resource('courses','CourseController');
+Route::get('/course/{id}/edit','CourseController@edit');
+
+//view
+Route::get('/course/view','CourseController@index');
+Route::get('/course/toogle/{id}','CourseController@toogle_status');
+
+//to update course...
+
+Route::patch('/course/update/{id}',[
+    'uses' => 'CourseController@update',
+    'as'  => 'course.update'
+]);
+Route::get('/course/create','CourseController@create');

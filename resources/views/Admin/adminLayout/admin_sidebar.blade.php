@@ -36,6 +36,20 @@
 						<a href="{{ url('/tablecontent/create') }}"><svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"/></svg> Add Table Content</a>
 
 					</li>
+
+					<li>
+						<a href="{{ url('/program/create') }}"><svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"/></svg> Add Program</a>
+					</li>
+
+					<li>
+						<a href="{{ url('/semester/create') }}"><svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"/></svg> Add Semester</a>
+
+					</li>
+
+					<li>
+						<a href="{{ url('/course/create') }}"><svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"/></svg> Add Course</a>
+
+					</li>
 										
 				</ul>
 			</li>
@@ -69,6 +83,18 @@
 
 						<a href="{{ url('/tablecontent/view') }}"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg>Table_content</a>
 					</li>
+
+					<li>
+						<a href="{{ url('/program/view') }}"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg>Program</a>
+					</li> 
+<li>
+						<a href="{{ url('/semester/view') }}"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg>Semester</a>
+
+					</li>
+
+					<li>
+						<a href="{{ url('/course/view') }}"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg>Course</a>
+					</li>	
 										
 				</ul>
 			</li>
