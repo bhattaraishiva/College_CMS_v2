@@ -195,3 +195,24 @@ Route::patch('/semester/update/{id}',[
     'uses' => 'SemesterController@update',
     'as'  => 'semester.update'
 ]);
+
+//Course
+//store
+Route::post('/course/store',[
+        'uses'=>'CourseController@store',
+        'as'=>'course.store'
+    ]);
+Route::resource('courses','CourseController');
+Route::get('/course/{id}/edit','CourseController@edit');
+
+//view
+Route::get('/course/view','CourseController@index');
+Route::get('/course/toogle/{id}','CourseController@toogle_status');
+
+//to update course...
+
+Route::patch('/course/update/{id}',[
+    'uses' => 'CourseController@update',
+    'as'  => 'course.update'
+]);
+Route::get('/course/create','CourseController@create');
